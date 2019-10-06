@@ -25,3 +25,34 @@ var database = firebase.database();
 // 2. Button for adding trains
 $("#add-train-btn").on("click", function(event) {
   event.preventDefault();
+
+    // Grabs user input
+  var trainName = $("#train-name-input").val().trim();
+  var destination = $("#destination-input").val().trim();
+  var trainTime = moment($("#time-input").val().trim(), "HH:mm").format                  ("HH:mm");
+  var frequency = $("#frequency-input").val().trim();
+
+  // Creates local "temporary" object for holding train data
+  var newTrain = {
+    trainName: trainName,
+    destination: destination,
+    trainTime: trainTime,
+    frequency: frequency
+  };
+
+    // Uploads train data to the database
+    database.ref().push(newTrain);
+
+    console.log(newTrain.trainName);
+    console.log(newTrain.destination);
+    console.log(newTrain.trainTime);
+    console.log(newTrain.frequency);
+
+    alert("Train successfully added");
+
+    // Clears all of the text-boxes
+    $("#train-name-input").val("");
+    $("#destination-input").val("");
+    $("#time-input").val("");
+    $("#frequency-input").val("");
+  });
