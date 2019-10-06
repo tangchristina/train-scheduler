@@ -55,4 +55,17 @@ $("#add-train-btn").on("click", function(event) {
     $("#destination-input").val("");
     $("#time-input").val("");
     $("#frequency-input").val("");
+
+    // Create the new row
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destination),
+        $("<td>").text(frequency),
+        $("<td>").text(trainTime),
+        //$("<td>").text(trainArrival),
+       // $("<td>").text(minutesAway)
+    );
+
+    // Append the new row to the table
+        $("#train-table > tbody").append(newRow);
   });
