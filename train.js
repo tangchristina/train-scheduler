@@ -67,9 +67,10 @@ var frequency;
             $("<td>").text(trainName),
             $("<td>").text(destination),
             $("<td>").text(frequency),
-            $("<td>").text(trainTime),
+            $("<td>").text(moment(nextTrain).format("hh:mm")),
+            $("<td>").text(minutesTillTrain)
             //$("<td>").text(trainArrival),
-        // $("<td>").text(minutesAway)
+        // 
         );
 
         // Append the new row to the table
@@ -100,7 +101,8 @@ var frequency;
 
         // Minute Until Train
         var minutesTillTrain = frequency - remainder;
-        console.log("MINUTES TILL TRAIN: " + minutesTillTrain);
+        console.log("MINUTE(S) TILL TRAIN: " + minutesTillTrain);
+        
 
         // Next Train
         var nextTrain = moment().add(minutesTillTrain, "minutes");
