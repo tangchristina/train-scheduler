@@ -50,7 +50,7 @@ $(document).ready(function () {
 
         // Calculating the arrival time based on frequency and the current time
        
-
+        //Can't get my minutesTillTrain to work
     
 
         // First Time (pushed back 1 year to make sure it comes before current time)
@@ -66,11 +66,11 @@ $(document).ready(function () {
         console.log("DIFFERENCE IN TIME: " + diffTime);
 
         // Time apart (remainder)
-        var remainder = diffTime % newTrain.frequency;
+        var remainder = diffTime % frequency;
         console.log(remainder);
 
         // Minute Until Train
-        var minutesTillTrain = newTrain.frequency - remainder;
+        var minutesTillTrain = frequency - remainder;
         console.log("MINUTE(S) TILL TRAIN: " + minutesTillTrain);
 
 
