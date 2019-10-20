@@ -62,7 +62,7 @@ $(document).ready(function () {
         console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
         // Difference between the times
-        var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+        var diffTime = moment().diff(firstTimeConverted, "minutes");
         console.log("DIFFERENCE IN TIME: " + diffTime);
 
         // Time apart (remainder)
